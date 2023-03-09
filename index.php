@@ -1,5 +1,6 @@
 <?php
     require_once "Config/databaseConnexion.php";
+    session_start();
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -18,13 +19,17 @@
         <ul class="flex space-evenly">
             <li class="menu"><a href="/">Home</a></li>
             <li class="menu"><a href="profil">Page profil</a></li>
-            <li class="menu"><a href="connexion">Connexion</a></li>
-        </ul>
+            <li class="menu"><?php if(isset($_SESSION['user'])) : ?>
+                                    <a href="deconnexion">Déconnexion</a>
+                             <?php else :?>
+                                    <a href="connexion">Connexion</a>
+                             <?php endif ?></li>
     </header>
     <main>
         <?php 
             require_once "Controllers/bienController.php"; 
             require_once "Controllers/userController.php"; 
+            
         ?>
     </main>
     <footer>

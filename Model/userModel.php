@@ -3,7 +3,7 @@
 function createUser($pdo)
 {
     try{
-        $query = "insert into users (nomUser, prenomUser, loginUser, passWordUser, role, emailUser) values (:nomUser, :prenomUser, :loginUser, :passWordUser, :role, :emailUser)"; //nom des colonnes utilisateur
+        $query = "insert into utilisateurs (nomUser, prenomUser, loginUser, passWordUser, role, emailUser) values (:nomUser, :prenomUser, :loginUser, :passWordUser, :role, :emailUser)"; //nom des colonnes utilisateur
         $newUser = $pdo->prepare($query);
         $newUser->execute([
             'nomUser' => $_POST["txtNom"],
@@ -21,6 +21,27 @@ function createUser($pdo)
 }
 
 
+function searchUser($pdo)
+{
+    try{
+        $query = "select * from utilisateurs where loginUser=:loginUser and passWordUser=:passWordUser";
+        $searchUser = $pdo->prepare($query);
+        $searchUser->execute([
+            'loginUser' => $_POST["txtLogin"],
+            'passWordUser' => $_POST["txtMot_de_passe"]
+        ]);
+
+        $user=$searchUser -> fetch();   
+        if ($user) {
+            $_SESSION['user']=$user;
+        }
+    }
+    catch(PDOException $e){
+        $message = $e->getMessage();
+        die($message);
+    }
+}
+
 
 
 /*try {
@@ -33,3 +54,5 @@ function createUser($pdo)
     die($message);
 }
 echo '<pre>' , var_dump($biens) , '</pre>';*/
+
+?>
