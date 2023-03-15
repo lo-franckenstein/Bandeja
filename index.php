@@ -15,6 +15,16 @@
     <title>RiQuizz</title>
 </head>
 <body>
+    <?php if(isset($_SESSION['user'])) : ?>
+                                    <section>
+                                        <h3>Vous êtes connecté!</h3>
+                                    </section>
+                                <?php else :?>
+                                    <section>
+                                        <h3>Vous n'êtes pas connecté!</h3>
+                                    </section>
+                             <?php endif ?>
+
     <header>
         <ul class="flex space-evenly">
             <li class="menu"><a href="/">Home</a></li>

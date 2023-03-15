@@ -1,4 +1,4 @@
-body {
+/* body {
     background-color: lavender;
     margin: 0;
     padding: 0;
@@ -6,17 +6,6 @@ body {
 main {
     width: 80%;
     margin: 0 auto;
-}
-
-section {
-    color: white;
-    background-color: black;
-    margin: 0;
-    padding: 0;
-}
-
-section h3 {
-    margin: 0;
 }
 
 /* Mettre les titres h1 en couleur bleue, taille 50px et la police en Arial */
@@ -144,9 +133,9 @@ table, th, td {
 }
 
 header {
-    background-color: blue;
+    background-color: #12B06C;
     margin: 0;
-    padding: 10px;
+    padding: 0px;
 }
 
 ul {
@@ -225,4 +214,4 @@ th {
 .progress-bar {
     height: 20px;
     background-color: green;
-}
+} 
