@@ -4,11 +4,14 @@
             <legend>Se connecter</legend>
             <div class="mb-3">
                 <label for="Login" class="form-label">Login</label>
-                <input type="text" placeholder="Login" class="form-control" id="Login" aria-describedby="emailHelp" name="txtLogin" required>
+                <input type="text" placeholder="Login" class="form-control" id="Login" aria-describedby="emailHelp" name="login">
+                <?php if(isset($messageErrorLogin['login'])) : ?> <p class="champvide"><?= $messageErrorLogin['login'] ?></p> <?php endif ?>
+
             </div>
             <div class="mb-3">
                 <label for="Password" class="form-label">Mot de passe</label>
-                <input type="password" placeholder="Mot de passe" class="form-control" id="Password" name="txtMot_de_passe" required>
+                <input type="password" placeholder="Mot de passe" class="form-control" id="Password" name="mot_de_passe">
+                <?php if(isset($messageErrorLogin['mot_de_passe'])) : ?> <p class="champvide"><?= $messageErrorLogin['mot_de_passe'] ?></p> <?php endif ?> 
             </div>
             <div>
                 <button name="btnEnvoi" class="btn btn-primary">Se connecter</button>

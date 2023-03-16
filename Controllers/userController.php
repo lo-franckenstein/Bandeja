@@ -7,8 +7,11 @@ $uri = $_SERVER["REQUEST_URI"];
 
 if($uri === "/inscription"){
     if(isset($_POST["btnEnvoi"])){ 
-        createUser($pdo);
-        header('location:/connexion');
+        $messageErrorLogin = verifData();
+        if(!isset($messageErrorLogin)) {
+            createUser($pdo);
+            header('location:/connexion');
+        }
     }
     require_once "Templates/users/inscriptionOrEditProfil.php";
 
@@ -19,8 +22,11 @@ if($uri === "/inscription"){
 } else if($uri === "/connexion"){
 
     if(isset($_POST["btnEnvoi"])){ 
-        searchUser($pdo);
-        header('location:/');
+        $messageErrorLogin = verifData();
+        if(!isset($messageErrorLogin)) {
+            searchUser($pdo);
+            header('location:/');
+        }
     }
     require_once "Templates/users/connexion.php";
 
@@ -30,5 +36,20 @@ if($uri === "/inscription"){
     session_destroy();
     header('location:/');
 }
+
+
+
+function verifData(){
+    foreach ($_POST as $key => $value) {
+        if (empty($value)){
+            $messageErrorLogin[$key] = "Votre " . $key . " est vide";
+            
+        } else if (ctype_space($value)){
+            $messageErrorLogin[$key] = "Votre " . $key . " est composé que de blancs";
+        }
+    }
+    return $messageErrorLogin;
+}
+
 
 ?>

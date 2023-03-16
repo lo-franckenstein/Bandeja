@@ -3,15 +3,15 @@
 function createUser($pdo)
 {
     try{
-        $query = "insert into utilisateurs (nomUser, prenomUser, loginUser, passWordUser, role, emailUser) values (:nomUser, :prenomUser, :loginUser, :passWordUser, :role, :emailUser)"; //nom des colonnes utilisateur
+        $query = "insert into users (nomUser, prenomUser, loginUser, passWordUser, role, emailUser) values (:nomUser, :prenomUser, :loginUser, :passWordUser, :role, :emailUser)"; //nom des colonnes utilisateur
         $newUser = $pdo->prepare($query);
         $newUser->execute([
-            'nomUser' => $_POST["txtNom"],
-            'prenomUser' => $_POST["txtPrenom"],
-            'loginUser' => $_POST["txtLogin"],
-            'passWordUser' => $_POST["txtMot_de_passe"],
+            'nomUser' => $_POST["nom"],
+            'prenomUser' => $_POST["prenom"],
+            'loginUser' => $_POST["login"],
+            'passWordUser' => $_POST["mot_de_passe"],
             'role' => 'user',
-            'emailUser' => $_POST["txtEmail"],
+            'emailUser' => $_POST["email"],
         ]);
     }
     catch(PDOException $e){

@@ -44,12 +44,6 @@
     </main>
     <footer>
         <div class="flex space-between align-item-center">
-            <p><a href="https://www.christinesurges.be/" target="_blank" title="Aller à l'agence">Voir l'agence</a></p>
-            <div>
-                <img class="imageIcon" src="Images/icon1.jpg" alt="image twitter">
-                <img class="imageIcon" src="Images/icon2.jpg" alt="image facebook">
-                <img class="imageIcon" src="Images/icon3.jpg" alt="image google">
-            </div>
         </div>
     </footer>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
