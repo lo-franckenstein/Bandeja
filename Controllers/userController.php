@@ -45,9 +45,16 @@ function verifData(){
             $messageErrorLogin[$key] = "Votre " . $key . " est vide";
             
         } else if (ctype_space($value)){
-            $messageErrorLogin[$key] = "Votre " . $key . " est composé que de blancs";
+            $messageErrorLogin[$key] = "Votre " . $key . " est vide";
+        }
+
+        if ($key == "mot_de_passe") {
+            $messageErrorLogin[$key] = "Votre " . $key . " est vide";
+            $messageErrorLogin[$key] = str_replace('_', ' ', $messageErrorLogin[$key]);
         }
     }
+
+    
     return $messageErrorLogin;
 }
 
