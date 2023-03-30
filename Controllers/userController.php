@@ -8,7 +8,7 @@ $uri = $_SERVER["REQUEST_URI"];
 if($uri === "/inscription"){
     if(isset($_POST["btnEnvoi"])){ 
         $messageErrorLogin = verifData();
-        if(!isset($messageErrorLogin)) {
+        if(!$messageErrorLogin) {
             createUser($pdo);
             header('location:/connexion');
         }
@@ -17,13 +17,12 @@ if($uri === "/inscription"){
 
 } elseif ($uri === "/profil") {
 
-    require_once "Templates/users/profil.php";
+    require_once "Templates/users/inscriptionOrEditProfil.php";
 
 } else if($uri === "/connexion"){
-
     if(isset($_POST["btnEnvoi"])){ 
         $messageErrorLogin = verifData();
-        if(!isset($messageErrorLogin)) {
+        if(!$messageErrorLogin) {
             searchUser($pdo);
             header('location:/');
         }
@@ -31,7 +30,12 @@ if($uri === "/inscription"){
     require_once "Templates/users/connexion.php";
 
 } elseif ($uri === "/profil") {
-    require_once "Templates/users/profil.php";
+    if(isset($_POST["btnEnvoi"])) {
+        UpdateUser($pdo);
+        UpdateSession($pdo);
+        header('location:/profil');
+    }
+    require_once "Templates/users/inscriptionOrEditProfil.php";
 } elseif ($uri === "/deconnexion") {
     session_destroy();
     header('location:/');
@@ -43,19 +47,19 @@ function verifData(){
     foreach ($_POST as $key => $value) {
         if (empty($value)){
             $messageErrorLogin[$key] = "Votre " . $key . " est vide";
+            $messageErrorLogin[$key] = str_replace('_', ' ', $key);
             
         } else if (ctype_space($value)){
-            $messageErrorLogin[$key] = "Votre " . $key . " est vide";
+            $messageErrorLogin[$key] = "Votre " . str_replace('_', ' ', $key) . " est vide";
         }
 
-        if ($key == "mot_de_passe") {
-            $messageErrorLogin[$key] = "Votre " . $key . " est vide";
-            $messageErrorLogin[$key] = str_replace('_', ' ', $messageErrorLogin[$key]);
-        }
     }
 
-    
-    return $messageErrorLogin;
+    if (isset($messageErrorLogin)) {
+        return $messageErrorLogin;
+    } else {
+        return false;
+    }
 }
 
 

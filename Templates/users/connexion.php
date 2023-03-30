@@ -14,7 +14,7 @@
                 <?php if(isset($messageErrorLogin['mot_de_passe'])) : ?> <p class="champvide"><?= $messageErrorLogin['mot_de_passe'] ?></p> <?php endif ?> 
             </div>
             <div>
-                <button name="btnEnvoi" class="btn btn-primary">Se connecter</button>
+                <button name="btnEnvoi" class="btn btn-primary" value="btnEnvoi">Se connecter</button>
             </div>
         </fieldset>
     </form>

@@ -1,6 +1,6 @@
 <?php
-    require_once "Config/databaseConnexion.php";
     session_start();
+    require_once "Config/databaseConnexion.php";
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -12,34 +12,36 @@
     <link rel="stylesheet" href="CSS/animation.css">
     <link rel="stylesheet" href="CSS/flex.css">
     <link rel="stylesheet" href="CSS/form.css">
-    <title>RiQuizz</title>
+    <title>Bandeja</title>
 </head>
 <body>
-    <?php if(isset($_SESSION['user'])) : ?>
-                                    <section>
-                                        <h3>Vous êtes connecté!</h3>
-                                    </section>
-                                <?php else :?>
-                                    <section>
-                                        <h3>Vous n'êtes pas connecté!</h3>
-                                    </section>
-                             <?php endif ?>
+    <!-- <?php if(isset($_SESSION['user'])) : ?>
+        <section>
+            <h3>Vous êtes connecté!</h3>
+        </section>
+    <?php else :?>
+        <section>
+            <h3>Vous n'êtes pas connecté!</h3>
+        </section>
+    <?php endif ?> -->
 
     <header>
         <ul class="flex space-evenly">
             <li class="menu"><a href="/">Home</a></li>
             <li class="menu"><a href="profil">Page profil</a></li>
-            <li class="menu"><?php if(isset($_SESSION['user'])) : ?>
-                                    <a href="deconnexion">Déconnexion</a>
-                             <?php else :?>
-                                    <a href="connexion">Connexion</a>
-                             <?php endif ?></li>
+            <li class="menu">
+                <?php if(isset($_SESSION['user'])) : ?>
+                    <a href="deconnexion">Déconnexion</a>
+                <?php else :?>
+                    <a href="connexion">Connexion</a>
+                <?php endif ?></li>
     </header>
+    <?php
+    ?>
     <main>
         <?php 
-            require_once "Controllers/bienController.php"; 
-            require_once "Controllers/userController.php"; 
-            
+            require_once "Controllers/userController.php";
+
         ?>
     </main>
     <footer>
