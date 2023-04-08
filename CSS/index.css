@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Delicious+Handrawn&display=swap');
+
+
 body {
     background-color: lavender;
     margin: 0;
@@ -19,42 +22,49 @@ section h3 {
     margin: 0;
 }
 
-/* Mettre les titres h1 en couleur bleue, taille 50px et la police en Arial */
-h1 {
-    color: blue;
-    font-size: 50px;
-    font-family: Arial, Helvetica, sans-serif;
-    text-decoration: underline;
-    text-align: center;
+.carrousel h2 {
+    font-family: 'Delicious Handrawn', cursive;
+    font-size: 3em;
 }
 
-h2 {
-    color: green;
-    font-size: 30px;
-    font-family: 'Times New Roman', Times, serif;
-    text-decoration: wavy underline overline;
+.panneau-news {
+    text-decoration: none;
+    color: black;
+
 }
 
-img {
-    width: 300px;
-    height: auto;
+.divcaroussel-news {
+    padding: 30px;
 }
 
-ol li {
-    font-size: 30px ;
-    margin-bottom: 20px;
-}
-
-#imageProfil {
-    width: 200px;
-    height: auto;
-    border-radius: 50%;
-    transform: scale(0);
-}
-
-#imageBien {
-    height: 200px;
+.title-news {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.636);
     width: auto;
+    font-size: 30px;
+}
+
+.desc-news {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.636);
+    width: auto;
+    font-size: 30px;
+}
+
+.divcaroussel-news {
+    width: 200px;
+    height: 150px;
+    
+}
+
+
+.divcaroussel-news a {
+    width: 200px;
+    height: 150px;
+    background-image: url("../Images/faire-carriere-padel.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+
 }
 
 .btn {

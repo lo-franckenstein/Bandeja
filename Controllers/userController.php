@@ -1,6 +1,7 @@
 <?php
 
 require_once "Model/userModel.php";
+require_once "Model/articleModel.php";
 
 $uri = $_SERVER["REQUEST_URI"];
 
@@ -34,6 +35,11 @@ if($uri === "/inscription"){
         UpdateUser($pdo);
         UpdateSession($pdo);
         header('location:/profil');
+    } elseif(isset($_POST["btnSuppression"])) {
+        modifyIdArticle($pdo);
+        deleteUser($pdo);
+        session_destroy();
+        header('location:/');
     }
     require_once "Templates/users/inscriptionOrEditProfil.php";
 } elseif ($uri === "/deconnexion") {

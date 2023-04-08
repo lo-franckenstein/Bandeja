@@ -28,6 +28,8 @@
         </div>
         <div>
             <button name="btnEnvoi" class="btn btn-primary" value="envoyer">S'inscrire</button>
-        </div>
+        </div><p>
+            <?php if (isset($_SESSION["user"])) :?><button name="btnSuppression" class="btn btn-primary" value="Supprimer le compte">Supprimer</button><?php endif ?>
+        </p>
     </fieldset>
 </form>

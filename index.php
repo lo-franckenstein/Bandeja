@@ -15,7 +15,7 @@
     <title>Bandeja</title>
 </head>
 <body>
-    <!-- <?php if(isset($_SESSION['user'])) : ?>
+    <?php if(isset($_SESSION['user'])) : ?>
         <section>
             <h3>Vous êtes connecté!</h3>
         </section>
@@ -23,7 +23,7 @@
         <section>
             <h3>Vous n'êtes pas connecté!</h3>
         </section>
-    <?php endif ?> -->
+    <?php endif ?>
 
     <header>
         <ul class="flex space-evenly">
@@ -41,8 +41,40 @@
     <main>
         <?php 
             require_once "Controllers/userController.php";
-
+            require_once "Controllers/articleController.php";
         ?>
+
+        <div class="carrousel">
+            <div class="carrousel-news">
+                <h2>Vos news récents</h2>
+                <div class="divcaroussel-news flex space-between">
+                    <a href="#" class="panneau-news">
+                        <p class="title-news">ceci est un titre</p>
+                        <p class="desc-news">Ceci est une description</p>
+                    </a>
+                    <a href="#" class="panneau-news">
+                        <p class="title-news">ceci est un titre</p>
+                        <p class="desc-news">Ceci est une description</p>
+                    </a>
+                    <a href="#" class="panneau-news">
+                        <p class="title-news">ceci est un titre</p>
+                        <p class="desc-news">Ceci est une description</p>
+                    </a>
+                    <a href="#" class="panneau-news">
+                        <p class="title-news">ceci est un titre</p>
+                        <p class="desc-news">Ceci est une description</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
     </main>
     <footer>
         <div class="flex space-between align-item-center">
@@ -52,3 +84,5 @@
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
+
+
