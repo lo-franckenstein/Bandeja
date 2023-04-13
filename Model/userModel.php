@@ -77,10 +77,10 @@ function UpdateSession($pdo) {
 
 function DeleteUser($pdo) {
     try {
-        $query = "delete from utilisateurs where id=:id";
+        $query = "delete from utilisateur where utilisateurId=:utilisateurId";
         $deleteUser = $pdo->prepare($query);
         $deleteUser->execute([
-            'id' => $_SESSION["user"]->id
+            'utilisateurId' => $_SESSION["user"]->utilisateurId
         ]);
     } catch (PDOException $e) {
         $message = $e->getMessage();

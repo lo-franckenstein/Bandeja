@@ -13,7 +13,7 @@
         </div>
         <div class="mb-3">
             <label for="email" class="form-label">Email</label>
-            <input type="email" placeholder="Email" class="form-control" id="email" name="email" value="<?php if(isset($_SESSION["user"])) : ?><?= $_SESSION["user"]->utilisateurPseudo ?><?php endif ?>">
+            <input type="email" placeholder="Email" class="form-control" id="email" name="email" value="<?php if(isset($_SESSION["user"])) : ?><?= $_SESSION["user"]->utilisateurEmail ?><?php endif ?>">
             <?php if(isset($messageErrorLogin['email'])) : ?> <p class="champvide"><?= $messageErrorLogin['email'] ?></p> <?php endif ?>
         </div>
         <div class="mb-3">
@@ -29,7 +29,7 @@
         <div>
             <button name="btnEnvoi" class="btn btn-primary" value="envoyer">S'inscrire</button>
         </div><p>
-            <?php if (isset($_SESSION["user"])) :?><button name="btnSuppression" class="btn btn-primary" value="Supprimer le compte">Supprimer</button><?php endif ?>
+            <?php if (isset($_SESSION["user"])) :?><button name="btnSuppression" class="btn btn-primary" value="btnSuppression">Supprimer</button><?php endif ?>
         </p>
     </fieldset>
 </form>

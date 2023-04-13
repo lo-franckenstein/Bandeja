@@ -4,7 +4,7 @@ require_once "Model/userModel.php";
 require_once "Model/articleModel.php";
 
 $uri = $_SERVER["REQUEST_URI"];
-
+var_dump($uri);
 
 if($uri === "/inscription"){
     if(isset($_POST["btnEnvoi"])){ 
@@ -16,11 +16,7 @@ if($uri === "/inscription"){
     }
     require_once "Templates/users/inscriptionOrEditProfil.php";
 
-} elseif ($uri === "/profil") {
-
-    require_once "Templates/users/inscriptionOrEditProfil.php";
-
-} else if($uri === "/connexion"){
+} elseif($uri === "/connexion"){
     if(isset($_POST["btnEnvoi"])){ 
         $messageErrorLogin = verifData();
         if(!$messageErrorLogin) {
@@ -31,6 +27,7 @@ if($uri === "/inscription"){
     require_once "Templates/users/connexion.php";
 
 } elseif ($uri === "/profil") {
+    var_dump("Coucou");
     if(isset($_POST["btnEnvoi"])) {
         UpdateUser($pdo);
         UpdateSession($pdo);
