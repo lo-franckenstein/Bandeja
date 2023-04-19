@@ -17,7 +17,7 @@
             <?php if(isset($messageErrorLogin['email'])) : ?> <p class="champvide"><?= $messageErrorLogin['email'] ?></p> <?php endif ?>
         </div>
         <div class="mb-3">
-            <label for="Login" class="form-label">Login</label>
+            <label for="Login" class="form-label">Pseudo</label>
             <input type="text" placeholder="Login" class="form-control" id="Login" name="login" value="<?php if(isset($_SESSION["user"])) : ?><?= $_SESSION["user"]->utilisateurMotdepasse ?><?php endif ?>" >
             <?php if(isset($messageErrorLogin['login'])) : ?> <p class="champvide"><?= $messageErrorLogin['login'] ?></p> <?php endif ?>
         </div>
@@ -27,7 +27,7 @@
             <?php if(isset($messageErrorLogin['mot_de_passe'])) : ?> <p class="champvide"><?= $messageErrorLogin['mot_de_passe'] ?></p> <?php endif ?>
         </div>
         <div>
-            <button name="btnEnvoi" class="btn btn-primary" value="envoyer">S'inscrire</button>
+            <button name="btnInscription" class="btn btn-primary" value="envoyer">S'inscrire</button>
         </div><p>
             <?php if (isset($_SESSION["user"])) :?><button name="btnSuppression" class="btn btn-primary" value="btnSuppression">Supprimer</button><?php endif ?>
         </p>

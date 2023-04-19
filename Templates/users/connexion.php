@@ -1,25 +1,22 @@
-<div class="flex space-evenly wrap">
-    <form method="post" action="">
-        <fieldset>
-            <legend>Se connecter</legend>
-            <div class="mb-3">
-                <label for="Login" class="form-label">Login</label>
-                <input type="text" placeholder="Login" class="form-control" id="Login" aria-describedby="emailHelp" name="login">
-                <?php if(isset($messageErrorLogin['login'])) : ?> <p class="champvide"><?= $messageErrorLogin['login'] ?></p> <?php endif ?>
+<div class="menu">
 
-            </div>
-            <div class="mb-3">
-                <label for="Password" class="form-label">Mot de passe</label>
-                <input type="password" placeholder="Mot de passe" class="form-control" id="Password" name="mot_de_passe">
-                <?php if(isset($messageErrorLogin['mot_de_passe'])) : ?> <p class="champvide"><?= $messageErrorLogin['mot_de_passe'] ?></p> <?php endif ?> 
-            </div>
-            <div>
-                <button name="btnEnvoi" class="btn btn-primary" value="btnEnvoi">Se connecter</button>
-            </div>
-        </fieldset>
+    <form action="post" action="">
+        <div class="form">
+            <label for="Pseudo" class="form-label">Pseudo</label>
+            <input type="text" placeholder="Pseudo" class="form-input" id="Pseudo" value="" name="nom">
+            <?php if(isset($messageErrorLogin['pseudo'])) : ?> <p class="champvide"><?= $messageErrorLogin['pseudo'] ?></p> <?php endif ?>
+        </div>
+        <div class="form">
+            <label for="Password" class="form-label">Mot de passe</label>
+            <input type="password" placeholder="Password" class="form-input" id="Password" value="" name="mot_de_passe">
+            <?php if(isset($messageErrorLogin['nom'])) : ?> <p class="champvide"><?= $messageErrorLogin['mot_de_passe'] ?></p> <?php endif ?>
+        </div>
+        <div class="form">
+            <button name="btnConnexion" class="btn" value="btnConnexion">Se connecter</button>
+        </div>
+        <div class="form">
+            <a href="inscription">Pas encore inscrit?</a>
+        </div>
     </form>
-    <div>
-        <h3 class="text-danger">Pas encore inscrit ?</h3>
-        <a href="inscription" class="btn btn-secondary">Clique</a>
-    </div>
+
 </div>

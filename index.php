@@ -8,67 +8,48 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/index.css">
+    <link rel="stylesheet" href="CSS/nav_footer.css">
+    <link rel="stylesheet" href="CSS/card.css">
+    <link rel="stylesheet" href="CSS/connexion.css">
     <title>Bandeja</title>
 </head>
 <body>
-    <?php if(isset($_SESSION['user'])) : ?>
-        <section>
-            <h3>Vous êtes connecté!</h3>
-        </section>
-    <?php else :?>
-        <section>
-            <h3>Vous n'êtes pas connecté!</h3>
-        </section>
-    <?php endif ?>
-
     <header>
-        <ul class="flex space-evenly">
-            <li class="menu"><a href="/">Home</a></li>
-            <li class="menu"><a href="profil">Page profil</a></li>
-            <li class="menu">
-                <?php if(isset($_SESSION['user'])) : ?>
-                    <a href="deconnexion">Déconnexion</a>
-                <?php else :?>
-                    <a href="connexion">Connexion</a>
-                <?php endif ?></li>
+        <nav>
+            <ul>
+                <img src="./Images/logo-bandeja.png" alt='Logo officielle du site: On voit un fond bleu, et une écriture par-dessus qui contient le mot: "Bandeja"'>
+                <li><a href="/">Accueil</a></li>
+                <li><a href="" class="inactiveLink">News</a>
+                    <ul>
+                        <li><a class="sousa" href="annonce">Annonce</a></li>
+                        <li><a class="sousa" href="actualité">Actualité</a></li>
+                    </ul>
+                </li>
+                <li><a href="" class="inactiveLink">Communauté</a>
+                    <ul>
+                        <li><a class="sousa" href="forum">Forum</a></li>
+                        <li><a class="sousa" href="recherche-joueurs">Recherche Joueurs</a></li>
+                        <li><a class="sousa" href="market">Market</a></li>
+                        <li><a class="sousa" href="faq">FAQ</a></li>
+                    </ul>
+                </li>
+                <li><a href="" class="inactiveLink">Compte</a>
+                    <ul>
+                        <li><a class="sousa" href="compte">Mon compte</a></li>
+                        <li><a class="sousa" href="creer-un-article">Créer un article</a></li>
+                        <li><a class="sousa" href="contact">Contacter</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
     </header>
-    <?php
-    ?>
     <main>
         <?php 
             require_once "Controllers/userController.php";
             require_once "Controllers/articleController.php";
         ?>
-
-        <div class="carrousel">
-            <div class="carrousel-news">
-                <h2>Vos news récents</h2>
-                <div class="divcaroussel-news flex space-between">
-                    <a href="#" class="panneau-news">
-                        <p class="title-news">ceci est un titre</p>
-                        <p class="desc-news">Ceci est une description</p>
-                    </a>
-                    <a href="#" class="panneau-news">
-                        <p class="title-news">ceci est un titre</p>
-                        <p class="desc-news">Ceci est une description</p>
-                    </a>
-                    <a href="#" class="panneau-news">
-                        <p class="title-news">ceci est un titre</p>
-                        <p class="desc-news">Ceci est une description</p>
-                    </a>
-                    <a href="#" class="panneau-news">
-                        <p class="title-news">ceci est un titre</p>
-                        <p class="desc-news">Ceci est une description</p>
-                    </a>
-                </div>
-            </div>
-        </div>
-
-
-
-
-
-
+    
 
 
     </main>

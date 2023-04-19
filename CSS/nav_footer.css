@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff&display=swap');
+
+
+
+/* BARRE DE NAVIGATION */
+
+nav {
+    background: #004AAD;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    padding-top: 1%;
+    padding-left: 3%;
+    padding-bottom: 1%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: 'DynaPuff', cursive;
+    font-size: 40px;
+}
+
+nav ul img {
+    width: 130px;
+    border-radius: 5%;
+    border-color: white;
+    border-style: solid;
+    border-width: 2.5px;
+}
+  
+nav ul li{
+    display: inline-block;
+    position: relative;
+}
+  
+nav ul li a {
+    display: block;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+}
+  
+nav ul li:hover > a {
+    background-color: #013477;
+    border-width: 0 0 2px 0;
+    border-color: white;
+    border-style: solid;
+}
+
+nav ul li .sousa:hover {
+    background-color: #004AAD;
+    border-width: 2px;
+}  
+
+nav ul li .sousa {
+    background-color: #013477;
+    font-size: 25px;
+}  
+nav ul ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+}
+  
+nav ul ul li {
+    display: block;
+}
+  
+nav ul ul li a {
+    padding: 10px 30px;
+}
+  
+nav ul li:hover > ul {
+    display: inherit;
+}
+
+/* Lien non clickable */
+.inactiveLink {
+    pointer-events: none;
+    cursor: default;
+}
+
+/* FOOTER */
+  
