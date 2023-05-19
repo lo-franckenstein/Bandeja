@@ -1,9 +1,1 @@
-<div class="mininews">
-    <h1>Découvrez les dernières actualités à propos du Padel !</h1>
-    <?php foreach ($articles as $article) : ?>
-        <div class="mininews-card">
-            <img src="<?= $article->articleImage ?>" alt="Image de l'article">
-            <h5><?= $article->articleTitre ?></h5>
-        </div>
-    <?php endforeach ?>
-</div>
+<iframe width="100%" height="1000px" src="https://www.youtube-nocookie.com/embed/FjwUwbGhZjk?controls=0&autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

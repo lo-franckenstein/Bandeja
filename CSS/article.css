@@ -1,0 +1,47 @@
+.article-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.article {
+    width: 300px;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #013477;
+    font-family: 'DynaPuff', cursive;
+    color: white;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    text-decoration: underline;
+}
+
+.article-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.article-description {
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.article-text {
+    margin-bottom: 10px;
+}
+
+.article-content {
+    margin-bottom: 10px;
+}
+
+.article-image {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+}

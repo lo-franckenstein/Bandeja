@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff&display=swap');
+
+form {
+    background-color: #004AAD;
+    border-style: solid;
+    border-width: 3px;
+    border-color: white;
+    color: white;
+    font-family: 'DynaPuff', cursive;
+    padding-right: 50px;
+    padding-left: 50px;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    font-size: 3em;
+}
+
+button {
+    background-color: white;
+    border-color: white;
+    border-radius: 5%;
+    border-style: solid;
+    border-width: 1px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    color:#004AAD;
+    font-family: 'DynaPuff', cursive;
+    margin-bottom: 20px;
+    margin-top: 30px;
+    font-size: 30px;
+}
+
+.formbutton {
+    display: flex;
+    justify-content: center;
+}
+
+.formsupp {
+    font-family: 'Times New Roman', Times, serif;
+    display: flex;
+    justify-content: space-around
+}
+
+.formsupp a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+input {
+    background-color:#004AAD;
+    border-style: solid;
+    border-width: 0px 0px 5px 0px;
+    border-color: white; 
+    height: 50px;
+    display: flex;
+    font-size: 30px;
+    color: white;
+    font-family: 'DynaPuff', cursive;
+} 
+
+textarea {
+    background-color:#004AAD;
+    border-style: solid;
+    border-width: 0px 0px 5px 0px;
+    border-color: white; 
+    height: 50px;
+    display: flex;
+    font-size: 30px;
+    color: white;
+    font-family: 'DynaPuff', cursive;
+    border-color: white;
+    border-width: 1px;
+    border-style: solid;
+}
+
+.input1 {
+    margin-bottom: 30%;
+}

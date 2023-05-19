@@ -1,0 +1,55 @@
+.table-container {
+    max-height: 600px;
+    overflow-y: scroll;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'DynaPuff', cursive;
+    color: white;
+    background-color: #004AAD;
+}
+  
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+thead th {
+    background-color: #013477;
+    color: white;
+}
+  
+.h5admin {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.list-users {
+    background-color: #013477;
+    color: white;
+    font-family: 'DynaPuff', cursive;
+    padding: 2%;
+    border-radius: 100px;
+    border-style: solid;
+    border-color: white;
+    border-width: 3px;
+}
+
+.list-articles {
+    background-color: #013477;
+    color: white;
+    font-family: 'DynaPuff', cursive;
+    padding: 2%;
+    border-radius: 100px;
+    border-style: solid;
+    border-color: white;
+    border-width: 3px;
+    font-size: 50px;
+}
+
+.tda, .tha {
+    font-size: 10px;
+}

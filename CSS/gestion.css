@@ -1,0 +1,21 @@
+.alertNoConf {
+    font-size: 30%;
+}
+
+.flexSpace {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+legend {
+    text-decoration: underline;
+}
+
+.justify-content-space-between {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* .noFlex{
+    display: flex;
+} */

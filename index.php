@@ -1,6 +1,10 @@
 <?php
     session_start();
     require_once "Config/databaseConnexion.php";
+    $uri = $_SERVER["REQUEST_URI"];
+    $urititle = str_replace('/', '', $uri);
+    $urititle = str_replace('-', ' ', $urititle);
+    $urititle = ucfirst($urititle);
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -12,7 +16,12 @@
     <link rel="stylesheet" href="CSS/nav_footer.css">
     <link rel="stylesheet" href="CSS/card.css">
     <link rel="stylesheet" href="CSS/connexion.css">
-    <title>Bandeja</title>
+    <link rel="stylesheet" href="CSS/gestion.css">
+    <link rel="stylesheet" href="CSS/administration.css">
+    <link rel="stylesheet" href="CSS/article.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <script src="JS/script.js"></script>
+    <title>Bandeja - <?=$urititle?></title>
 </head>
 <body>
     <header>
@@ -20,12 +29,6 @@
             <ul>
                 <img src="./Images/logo-bandeja.png" alt='Logo officielle du site: On voit un fond bleu, et une écriture par-dessus qui contient le mot: "Bandeja"'>
                 <li><a href="/">Accueil</a></li>
-                <li><a href="" class="inactiveLink">News</a>
-                    <ul>
-                        <li><a class="sousa" href="annonce">Annonce</a></li>
-                        <li><a class="sousa" href="actualité">Actualité</a></li>
-                    </ul>
-                </li>
                 <li><a href="" class="inactiveLink">Communauté</a>
                     <ul>
                         <li><a class="sousa" href="forum">Forum</a></li>
@@ -41,6 +44,17 @@
                         <li><a class="sousa" href="contact">Contacter</a></li>
                     </ul>
                 </li>
+                <?php if(isset($_SESSION["user"])) :?>
+                    <?php if ($_SESSION["user"]->utilisateurRole == "administrator") :?>
+                        <li><a href="" class="inactiveLink">Administration</a>
+                            <ul>
+                                <li><a class="sousa" href="gestion-utilisateur">Gestion des utilisateurs</a></li>
+                                <li><a class="sousa" href="gestion-article">Gestion des articles</a></li>
+                            </ul>
+                        </li>
+                    <?php endif ?></p>
+                <?php endif ?>
+                
             </ul>
         </nav>
     </header>
@@ -49,16 +63,7 @@
             require_once "Controllers/userController.php";
             require_once "Controllers/articleController.php";
         ?>
-    
-
-
     </main>
-    <footer>
-        <div class="flex space-between align-item-center">
-        </div>
-    </footer>
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
 
