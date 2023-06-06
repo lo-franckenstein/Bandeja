@@ -8,7 +8,6 @@
                     <th class="tha">Pseudo</th>
                     <th class="tha">Titre</th>
                     <th class="tha">Description</th>
-                    <th class="tha">Date</th>
                 </tr>
             </thead>
             <tbody>
@@ -33,7 +32,6 @@
                     <th class="tda">Pseudo</th>
                     <th class="tda">Titre</th>
                     <th class="tda">Description</th>
-                    <th class="tda">Date</th>
                 </tr>
             </thead>
             <tbody>
@@ -60,7 +58,6 @@
                     <th class="tda">Pseudo</th>
                     <th class="tda">Titre</th>
                     <th class="tda">Description</th>
-                    <th class="tda">Date</th>
                 </tr>
             </thead>
             <tbody>
@@ -84,7 +81,6 @@
                     <th class="tda">Pseudo</th>
                     <th class="tda">Titre</th>
                     <th class="tda">Description</th>
-                    <th class="tda">Date</th>
                 </tr>
             </thead>
             <tbody>

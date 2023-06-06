@@ -22,40 +22,7 @@ if ($uri === "/compte") { // Lorsque l'utilisateur clique sur compte, on vérifi
         } elseif(isset($_POST["btnDeconnexion"])) {
             session_destroy();
             header('location:/');
-        } elseif(isset($_POST["btnClé_de_confirmation"])) {
-
-
-
-
-
-
-
-
-
-
-            $tentativeKey = keyConfirmation($pdo);
-            var_dump($tentativeKey);
-            var_dump($_POST["Clé_de_confirmation"]);
-            
-            $tentativeKeyString = strval($tentativeKey->utilisateurConfKey);
-            var_dump($tentativeKeyString);
-            
-            if ($tentativeKeyString === $_POST["Clé_de_confirmation"]) {
-                var_dump("héh");
-                modificationConfirmation($pdo);
-                header('location:/');
-            }
-
-
-
-
-
-
-
-
-            
         }
-        require_once "Templates/users/gestion-inscription.php";
     } else {    // Si ce n'est pas le cas, on le mène vers la page de connexion
         if(isset($_POST["btnConnexion"])){ 
             $messageErrorLogin = verifData();

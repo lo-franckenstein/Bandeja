@@ -39,16 +39,11 @@ if ($uri === "/index.php" || $uri === "/") {
     } else {
         header:('location:/');
     }
-} elseif ($uri === "/voirArticle?articleId=" . $_GET["articleId"]) {
-    $articleees = selectOneArticle($pdo);
-    require_once "Templates/articles/OneArticle.php";
+} elseif (substr($uri, 0, 12) === "/voirArticle") {
+    if ($uri === "/voirArticle?articleId=" . $_GET["articleId"]) {
+        $article = selectOneArticle($pdo);
+        require_once "Templates/articles/OneArticle.php";
+    }
 }
-
-
-
-
-
-
-
 
 ?>

@@ -69,7 +69,7 @@ function newArticle($pdo) {
         }
     } else if ($_POST['articleType'] == 'forum') {
         try {
-            $query = "insert into article (articleTitre, articleDescription, articleTexte, articleImage, articlePost, utilisateurId) values (:articleTitre, :articleDescription, :articleTexte, :articleImage, :articlePost, :utilisateurId)";
+            $query = "insert into article ( articleTitre, articleDescription, articleTexte, articleImage, articlePost, utilisateurId) values (:articleTitre, :articleDescription, :articleTexte, :articleImage, :articlePost, :utilisateurId)";
             $sendNewArticle = $pdo->prepare($query);
             $sendNewArticle->execute([
                 'articleTitre' => $_POST["Titre"],
@@ -154,7 +154,7 @@ function newArticle($pdo) {
 function articleForum($pdo)
 {
     try{
-        $query = "SELECT article.articleId, article.articleTitre, article.articleDescription, article.articleImage, utilisateur.utilisateurPseudo FROM article_categorie INNER JOIN article ON article_categorie.articleId = article.articleId INNER JOIN utilisateur ON article.utilisateurId = utilisateur.utilisateurId WHERE article_categorie.categorieId = 4"; 
+        $query = "SELECT article.articleId, article.articleTitre, article.articleDescription, article.articleDate, article.articleImage, utilisateur.utilisateurPseudo FROM article_categorie INNER JOIN article ON article_categorie.articleId = article.articleId INNER JOIN utilisateur ON article.utilisateurId = utilisateur.utilisateurId WHERE article_categorie.categorieId = 3"; 
         $forum = $pdo->prepare($query);
         $forum->execute([]);
         $articles = $forum->fetchAll();
@@ -169,8 +169,7 @@ function articleForum($pdo)
 function articleRecherche($pdo)
 {
     try{
-        $query = "SELECT article.articleId, article.articleTitre, article.articleDescription, utilisateur.utilisateurPseudo FROM article_categorie INNER JOIN article ON article_categorie.articleId = article.articleId INNER JOIN utilisateur ON article.utilisateurId = utilisateur.utilisateurId WHERE article_categorie.categorieId = 4
-        "; 
+        $query = "SELECT article.articleId, article.articleTitre, article.articleDescription, article.articleDate, utilisateur.utilisateurPseudo FROM article_categorie INNER JOIN article ON article_categorie.articleId = article.articleId INNER JOIN utilisateur ON article.utilisateurId = utilisateur.utilisateurId WHERE article_categorie.categorieId = 4"; 
         $recherche = $pdo->prepare($query);
         $recherche->execute([]);
         $articles = $recherche->fetchAll();
@@ -185,7 +184,7 @@ function articleRecherche($pdo)
 function articleBoutique($pdo)
 {
     try{
-        $query = "SELECT article.articleId, article.articleTitre, article.articleImage, utilisateur.utilisateurPseudo FROM article_categorie INNER JOIN article ON article_categorie.articleId = article.articleId INNER JOIN utilisateur ON article.utilisateurId = utilisateur.utilisateurId WHERE article_categorie.categorieId = 5
+        $query = "SELECT article.articleId, article.articleTitre, article.articleImage, article.articleDate, utilisateur.utilisateurPseudo FROM article_categorie INNER JOIN article ON article_categorie.articleId = article.articleId INNER JOIN utilisateur ON article.utilisateurId = utilisateur.utilisateurId WHERE article_categorie.categorieId = 5
         "; 
         $boutique = $pdo->prepare($query);
         $boutique->execute([]);
@@ -201,7 +200,7 @@ function articleBoutique($pdo)
 function articleFaq($pdo)
 {
     try{
-        $query = "SELECT article.articleId, article.articleTitre, article.articleDescription, utilisateur.utilisateurPseudo FROM article_categorie INNER JOIN article ON article_categorie.articleId = article.articleId INNER JOIN utilisateur ON article.utilisateurId = utilisateur.utilisateurId WHERE article_categorie.categorieId = 6"; 
+        $query = "SELECT article.articleId, article.articleTitre, article.articleDescription, article.articleDate, utilisateur.utilisateurPseudo FROM article_categorie INNER JOIN article ON article_categorie.articleId = article.articleId INNER JOIN utilisateur ON article.utilisateurId = utilisateur.utilisateurId WHERE article_categorie.categorieId = 6"; 
         $faq = $pdo->prepare($query);
         $faq->execute([]);
         $articles = $faq->fetchAll();
@@ -215,7 +214,7 @@ function articleFaq($pdo)
 
 function selectOneArticle($pdo) {
     try {
-        $query = "select * from article where articleId =: articleId";
+        $query = "SELECT * FROM article INNER JOIN utilisateur ON article.utilisateurId = utilisateur.utilisateurId WHERE articleId =:articleId";
         $selection = $pdo->prepare($query);
         $selection->execute([
             "articleId" => $_GET["articleId"]

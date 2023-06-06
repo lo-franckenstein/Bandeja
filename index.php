@@ -19,7 +19,9 @@
     <link rel="stylesheet" href="CSS/gestion.css">
     <link rel="stylesheet" href="CSS/administration.css">
     <link rel="stylesheet" href="CSS/article.css">
+    <link rel="stylesheet" href="CSS/conversation.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <script src="https://kit.fontawesome.com/409724db41.js" crossorigin="anonymous"></script>
     <script src="JS/script.js"></script>
     <title>Bandeja - <?=$urititle?></title>
 </head>
@@ -35,6 +37,7 @@
                         <li><a class="sousa" href="recherche-joueurs">Recherche Joueurs</a></li>
                         <li><a class="sousa" href="market">Market</a></li>
                         <li><a class="sousa" href="faq">FAQ</a></li>
+                        <?php if(isset($_SESSION["user"])) :?><li><a class="sousa" href="dashboarddiscussion">Discussion</a></li><?php endif ?>
                     </ul>
                 </li>
                 <li><a href="" class="inactiveLink">Compte</a>
@@ -62,6 +65,7 @@
         <?php 
             require_once "Controllers/userController.php";
             require_once "Controllers/articleController.php";
+            require_once "Controllers/conversationController.php"
         ?>
     </main>
 </body>

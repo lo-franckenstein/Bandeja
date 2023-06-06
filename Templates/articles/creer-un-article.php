@@ -47,7 +47,7 @@
         <?php if(isset($messageErrorLogin['Image'])) : ?> <p class="champvide"><?= $messageErrorLogin['Image'] ?></p> <?php endif ?>
     </div>
     <div class="flexSpace">
-        <button name="btnCréerArticle" class="btn btn-primary" value="btnCréerArticle">Envoyer une demande de validation de mon article</button>
+        <button name="btnCréerArticle" class="btn btn-primary" value="btnCréerArticle">Envoyer mon article</button>
     </div>
 </form>
 

@@ -55,7 +55,6 @@
             <thead>
                 <tr>
                     <th>Titre</th>
-                    <th>Description</th>
                     <th>Auteur</th>
                     <th>Lien pour voir plus</th>
                 </tr>
@@ -64,7 +63,6 @@
                 <?php foreach ($articles as $article) : ?>
                     <tr>
                         <td><?= $article->articleTitre ?></td>
-                        <td><?= $article->articleDescription ?></td>
                         <td><?= $article->utilisateurPseudo ?></td>
                         <td><a href="voirArticle?articleId=<?= $article->articleId ?>">Voir plus...</a></td>
                     </tr>

@@ -43,21 +43,3 @@
             <p><?php if (isset($_SESSION["user"])) :?><button name="btnSuppression" class="btn btn-primary" value="btnSuppression">Supprimer</button><?php endif ?></p>
         </div>
 </form>
-
-
-
-
-
-
-
-<?php if (isset($_SESSION["user"])) :?><?php if ($_SESSION["user"]->utilisateurConf == 0) :?>
-    <form method='post' action="" class="noFlex">
-        <div class="mb-3">
-            <label for="Clé_de_confirmation" class="form-label">Confirmation d'inscription</label>
-            <input type="text" placeholder="Clé de confirmation" class="form-control" id="Clé_de_confirmation" name="Clé_de_confirmation" value="">
-        </div>
-        <div class="flexSpace">
-            <button name="btnClé_de_confirmation" class="btn btn-primary" value="btnClé_de_confirmation">Clé de confirmation</button>
-        </div>
-    </form>
-<?php endif ?><?php endif ?></p>

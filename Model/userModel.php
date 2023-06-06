@@ -235,11 +235,27 @@ function modificationConfirmation($pdo) {
 function searchAllUsers($pdo)
 {
     try{
-        $query = "SELECT utilisateurPseudo, utilisateurNom, utilisateurPrenom, utilisateurEmail FROM utilisateur"; 
+        $query = "SELECT utilisateurId, utilisateurPseudo, utilisateurNom, utilisateurPrenom, utilisateurEmail FROM utilisateur"; 
         $searchAllUser = $pdo->prepare($query);
         $searchAllUser->execute([]);
         $utilisateurs = $searchAllUser->fetchAll();
         return $utilisateurs;
+    }
+    catch(PDOException $e){
+        $message = $e->getMessage();
+        die($message);
+    }
+}
+
+function searchAllUsersButNotMe($pdo)
+{
+    try{
+        $query = "SELECT utilisateurId, utilisateurPseudo, utilisateurNom, utilisateurPrenom, utilisateurEmail FROM utilisateur WHERE utilisateurId !=:utilisateurConnected"; 
+        $searchAllUser = $pdo->prepare($query);
+        $searchAllUser->execute([
+            'utilisateurConnected' => $_SESSION["user"]->utilisateurId
+        ]);
+        return $searchAllUser;
     }
     catch(PDOException $e){
         $message = $e->getMessage();
